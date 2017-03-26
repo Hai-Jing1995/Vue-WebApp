@@ -1,0 +1,25 @@
+
+//在下面加上1px的border
+//画边框
+border-1px($color)
+	position: relative
+	&:after
+		display: block
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		border-top: 1px solid $color
+		content: ' '
+		
+//去掉一像素的边框
+border-none()
+	&:after
+		display: none
+
+	
+//选择是2x图片还是3x图片
+bg-image($url)
+	background-image: url($url + "@2x.png")
+	@media (-webkit-min-device-pixel-ratio: 3),(-min-device-pixel-ratio: 3)
+		background-image: url($url + "@3x.png")
